@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Info Website</title>
+    <title>kayla files</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 40px;
+            background: #f8f9fa;
+        }
+
+        h1 {
+            color: #2c3e50;
         }
 
         input, textarea {
-            width: 60%;
-            padding: 10px;
-            margin: 10px;
+            width: 70%;
+            max-width: 900px;
+            padding: 12px;
+            margin: 12px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.5;
+            background: #fff;
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 28px;
+            font-size: 17px;
             cursor: pointer;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin: 10px;
+        }
+
+        button:hover {
+            background: #2980b9;
         }
 
         #detailsPage {
             display: none;
-            margin-top: 40px;
+            margin-top: 30px;
+        }
+
+        #displayContent {
+            font-family: Georgia, serif;
+            background: #fdfdfd;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 20px auto;
+            max-width: 960px;
+            min-height: 400px;
+            text-align: left;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-size: 17px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
     </style>
 </head>
-
 <body>
 
     <!-- MAIN PAGE -->
     <div id="mainPage">
         <h1>Create a Post</h1>
 
-        <input type="text" id="titleInput" placeholder="Enter Title Here">
+        <input type="text" id="titleInput" placeholder="kayla files">
 
-        <br>
-
-        <textarea id="contentInput" rows="15">
+        <textarea id="contentInput" rows="18">
 IN THE SUPERIOR COURT OF California
 COUNTY OF San Bernardino
 
@@ -86,29 +125,31 @@ Additionally:
 50 years of solitary confinement, to run consecutively.
         </textarea>
 
-        <br>
-
-        <button onclick="goToDetails()">View More</button>
+        <button onclick="goToDetails()">View Document</button>
     </div>
 
 
-    <!-- DETAILS PAGE -->
+    <!-- DETAILS PAGE (read-only view) -->
     <div id="detailsPage">
         <h1 id="displayTitle"></h1>
-        <p id="displayContent" style="white-space: pre-wrap;"></p>
+
+        <!-- Using readonly textarea for long content + clear "cannot edit" feeling -->
+        <textarea id="displayContent" 
+                  readonly 
+                  rows="30"></textarea>
 
         <br>
-        <button onclick="goBack()">Go Back</button>
+        <button onclick="goBack()">← Back to Edit</button>
     </div>
 
 
 <script>
 function goToDetails() {
-    const title = document.getElementById("titleInput").value;
+    const title = document.getElementById("titleInput").value.trim() || "Untitled Document";
     const content = document.getElementById("contentInput").value;
 
     document.getElementById("displayTitle").innerText = title;
-    document.getElementById("displayContent").innerText = content;
+    document.getElementById("displayContent").value = content;
 
     document.getElementById("mainPage").style.display = "none";
     document.getElementById("detailsPage").style.display = "block";
