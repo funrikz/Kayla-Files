@@ -49,17 +49,17 @@
         #displayContent {
             font-family: Georgia, serif;
             background: #fdfdfd;
-            border: 1px solid #bbb;
+            border: 2px solid #8B0000;
             border-radius: 8px;
-            padding: 30px;
+            padding: 40px;
             margin: 20px auto;
             max-width: 960px;
-            min-height: 500px;
+            min-height: 600px;
             text-align: left;
             white-space: pre-wrap;
-            line-height: 1.7;
-            font-size: 18px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            line-height: 1.8;
+            font-size: 19px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
         .label {
             font-weight: bold;
@@ -70,14 +70,14 @@
 </head>
 <body>
 
-    <!-- MAIN PAGE -->
+    <!-- MAIN PAGE – only title + editable court doc -->
     <div id="mainPage">
-        <h1>Create / Edit Document</h1>
+        <h1>Kayla Files</h1>
 
-        <div class="label">Document Title:</div>
+        <div class="label">Kayl_files:</div>
         <input type="text" id="titleInput" placeholder="kayla files" value="The Kayla Files">
 
-        <div class="label">Working / Draft Content (editable – doesn't show on details page):</div>
+        <div class="label">kayla_files:</div>
         <textarea id="contentInput" rows="15">
 IN THE SUPERIOR COURT OF California
 COUNTY OF San Bernardino
@@ -110,9 +110,21 @@ Additionally:
 50 years of solitary confinement, to run consecutively.
         </textarea>
 
-        <div class="label">What appears on "View More" page (your Kayla quotes list):</div>
-        <textarea id="detailsInput" rows="20">
-The Kayla Files
+        <br>
+        <button onclick="goToDetails()">View More →</button>
+    </div>
+
+    <!-- DETAILS PAGE – read-only view of the fixed quotes list -->
+    <div id="detailsPage">
+        <h1 id="displayTitle"></h1>
+        <div id="displayContent"></div>
+        <br>
+        <button onclick="goBack()">← Go Back</button>
+    </div>
+
+<script>
+// The quotes list is now hard-coded here – users cannot edit it in the browser
+const kaylaQuotes = `The Kayla Files
 
 “You lying lair that lyes”
 “Is that a tree”
@@ -225,28 +237,13 @@ Do you wanna do Chloe raw? “Yeah”
 “We should be Batman and hello kitty cat”
 Do you support the lgbtq? “No”
 “Let me get my daily dose of abs”
-“Let me watch my abs”
-        </textarea>
+“Let me watch my abs”`;
 
-        <br>
-        <button onclick="goToDetails()">View More →</button>
-    </div>
-
-    <!-- DETAILS PAGE -->
-    <div id="detailsPage">
-        <h1 id="displayTitle"></h1>
-        <div id="displayContent"></div>
-        <br>
-        <button onclick="goBack()">← Go Back</button>
-    </div>
-
-<script>
 function goToDetails() {
-    const title   = document.getElementById("titleInput").value.trim() || "Untitled Document";
-    const details = document.getElementById("detailsInput").value;
-
+    const title = document.getElementById("titleInput").value.trim() || "Untitled Document";
+    
     document.getElementById("displayTitle").innerText = title;
-    document.getElementById("displayContent").innerText = details;
+    document.getElementById("displayContent").innerText = kaylaQuotes;
 
     document.getElementById("mainPage").style.display = "none";
     document.getElementById("detailsPage").style.display = "block";
