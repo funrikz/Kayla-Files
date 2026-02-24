@@ -9,11 +9,9 @@
             margin: 40px;
             background: #f8f9fa;
         }
-
         h1 {
             color: #2c3e50;
         }
-
         input, textarea {
             width: 70%;
             max-width: 900px;
@@ -25,13 +23,12 @@
             font-size: 16px;
             box-sizing: border-box;
         }
-
         textarea {
             font-family: 'Courier New', Courier, monospace;
             line-height: 1.5;
             background: #fff;
+            min-height: 180px;
         }
-
         button {
             padding: 12px 28px;
             font-size: 17px;
@@ -42,30 +39,32 @@
             border-radius: 6px;
             margin: 10px;
         }
-
         button:hover {
             background: #2980b9;
         }
-
         #detailsPage {
             display: none;
             margin-top: 30px;
         }
-
         #displayContent {
             font-family: Georgia, serif;
             background: #fdfdfd;
-            border: 1px solid #ddd;
+            border: 1px solid #bbb;
             border-radius: 8px;
-            padding: 24px;
+            padding: 30px;
             margin: 20px auto;
             max-width: 960px;
-            min-height: 400px;
+            min-height: 500px;
             text-align: left;
             white-space: pre-wrap;
-            line-height: 1.6;
-            font-size: 17px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            line-height: 1.7;
+            font-size: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+        .label {
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
         }
     </style>
 </head>
@@ -73,83 +72,181 @@
 
     <!-- MAIN PAGE -->
     <div id="mainPage">
-        <h1>Create a Post</h1>
+        <h1>Create / Edit Document</h1>
 
-        <input type="text" id="titleInput" placeholder="kayla files">
+        <div class="label">Document Title:</div>
+        <input type="text" id="titleInput" placeholder="kayla files" value="The Kayla Files">
 
-        <textarea id="contentInput" rows="18">
+        <div class="label">Working / Draft Content (editable – doesn't show on details page):</div>
+        <textarea id="contentInput" rows="15">
 IN THE SUPERIOR COURT OF California
 COUNTY OF San Bernardino
-
 The State of California
 v.
 Kayla Files
 Defendant
-
 Case No. 2026-CR-23493
-
 INDICTMENT
-
 The Grand Jury of Pink Sprinkles, State of California, charges the Defendant with the following offenses:
-
 Count 1: Illegal Distribution of Controlled Substances
 In violation of State Code 144, the Defendant knowingly distributed unlawful narcotics.
-
 Count 2–4: Sexual Assault (3 Counts)
 In violation of State Code 132, the Defendant engaged in non-consensual acts with victims identified through witness testimony.
-
 Count 5: Hate Crime
 In violation of State Code 129, the Defendant committed a criminal offense motivated by bias against a protected group.
-
 Count 6: Child Exploitation / Trafficking
 In violation of State Code 1992, the Defendant knowingly engaged in unlawful trafficking of a minor.
-
 Count 7: Criminal Organization / Cult Affiliation
 In violation of State Code 14, the Defendant participated in an organized criminal enterprise.
-
 Count 8: Aggravated Harassment
 In violation of State Code 349, the Defendant engaged in repeated threatening behavior toward victims.
-
 JURY VERDICT
-
 After presentation of evidence and witness testimony, the jury finds the Defendant:
-
 GUILTY on all counts.
-
 SENTENCING
-
 For Counts 1–8:
 Life Imprisonment without the possibility of parole.
-
 Additionally:
 50 years of solitary confinement, to run consecutively.
         </textarea>
 
-        <button onclick="goToDetails()">View Document</button>
-    </div>
+        <div class="label">What appears on "View More" page (your Kayla quotes list):</div>
+        <textarea id="detailsInput" rows="20">
+The Kayla Files
 
-
-    <!-- DETAILS PAGE (read-only view) -->
-    <div id="detailsPage">
-        <h1 id="displayTitle"></h1>
-
-        <!-- Using readonly textarea for long content + clear "cannot edit" feeling -->
-        <textarea id="displayContent" 
-                  readonly 
-                  rows="30"></textarea>
+“You lying lair that lyes”
+“Is that a tree”
+“Kaylas taking a big massive dump” (outside)
+“Do you like my otter drawling”
+“I’m gonna kill yourself”
+“6-7” (hand gesture)
+“Clock me ig”
+“Is taneta necessary”
+“I’m gonna think before I speak” (after stutter)
+“No freaking way”
+“The pool is so warm” (peed in pool)
+“I want to go poo-poo”
+“I swim like a mermaid”
+“Hey don’t touch my toes”
+“Guys she’s trying to interlock toes with me”
+“I don’t say embarrassing things”
+“Ooo i love white chicks”
+“Both my balls”
+“Okay we’re done” (also after stutter)
+“Okay what the freak”
+“She’s was trying to tickle my toes bro”
+“Go touch yourself”
+“open relationships work the best😼”
+“Triple K”
+Do you piss on the floor? “Yeah”
+“I’m racist”
+Are you in love with Daisha? “Yeah”
+“Me rhian Macy and Daisha are in a quadruple”
+“If I fall asleep will you play with my balls”
+“OMG the water came out of my ear”
+“I molested you”
+“Ow bro Get off of me”
+“Oh dang I wanna see your feet”
+“Oh she’s literally in my ear”
+“Cause I like girls”
+“Stop let me finish”
+“You look like a churro”
+“It’s hard to not be wlw”
+“Who’s breathing into the camera”
+“When did the words im lesbian come out of my mouth”
+“your funny done shave your head”
+“You sat on me”
+“Mia my toes Bro”
+“Mia you sat on my toes and now theyre broken”
+“You guys wanna sleep in my bed”
+“Where is my water” (holding it)
+“Why are you tickling my feet with your toes”
+“Kayla’s my little dog”
+(Blows kisses to women and sits on their lap)
+“I’m gonna pmo”
+“I’ll give you a nickel for your pickle”
+“You my shorty”
+“I was like sucking on it”
+“oh so she’s cheating on me with a bird”
+Do you like cp? “Yeah”
+“I got laid”
+“it did send you how”
+“Meow”
+“She came every day”
+“guys i am in the most freakiest mood rn i don’t know how to explain”
+“KKK”
+“Niggaaaa”
+“I’m going in the closet”
+“Ablabalaalba get away from me”
+“They’re all my pookies”
+“225!” (It’s 125)
+“Kayla how did you get 500?” (I dunno)
+*slurp noise*
+“yea i should tell her i’ve been ripped apart limb by limb and then sold and then bought back”
+“I don’t wanna go down I don’t wanna lose a leg” (looses leg)
+“I wanna take two at a time”
+Do you wanna do Chloe raw? “Yeah”
+“Chloe’s bae”
+“I feel like I’m molesting this crab”
+“I love you Elizabeth”
+“Youre my pookie I don’t want you to leave”
+“If you touch my foot again you’re gonna get punched”
+“What do you want me to put pool freak off”
+“I got a dih just not attached”😛
+“I keep on seeing eggs getting molested”
+“I feel like a drug dealer”
+“I feel like I’m raping him”
+“The freaky tongue out”
+“You gotta hit the bubble emote”
+“I like cgi baby”
+“My pillow was wet”
+“Take it off…and your clothes along with it”
+“Look at my girlfriends”
+“I kinda like being the dog”
+“guys this girls reallllyy good”
+“i lowkey like shots”
+“Its all over my face”
+“I love hearing guys moan, real”
+“I’m going to give you this three finger combo”
+“I’m talkin’ bout innittt”
+“I’m ripping your pjs”
+“My room my feet”
+“Youre in my room I can put my feet whever I want”
+“If I want to put my feet here I’ll put my feet here”
+“I kinda want a girlfriend”
+“I just got flashed”
+“I’m close to 1 trillion” (not even close)
+“I keep seeing eggs getting molested” (again)
+“It’s sticky and white”
+“Put your handprint on me”
+“Can’t say comedic effect”
+“I sawl the photo” (was a message)
+“I think I called her princess or something”
+“We should be Batman and hello kitty cat”
+Do you support the lgbtq? “No”
+“Let me get my daily dose of abs”
+“Let me watch my abs”
+        </textarea>
 
         <br>
-        <button onclick="goBack()">← Back to Edit</button>
+        <button onclick="goToDetails()">View More →</button>
     </div>
 
+    <!-- DETAILS PAGE -->
+    <div id="detailsPage">
+        <h1 id="displayTitle"></h1>
+        <div id="displayContent"></div>
+        <br>
+        <button onclick="goBack()">← Go Back</button>
+    </div>
 
 <script>
 function goToDetails() {
-    const title = document.getElementById("titleInput").value.trim() || "Untitled Document";
-    const content = document.getElementById("contentInput").value;
+    const title   = document.getElementById("titleInput").value.trim() || "Untitled Document";
+    const details = document.getElementById("detailsInput").value;
 
     document.getElementById("displayTitle").innerText = title;
-    document.getElementById("displayContent").value = content;
+    document.getElementById("displayContent").innerText = details;
 
     document.getElementById("mainPage").style.display = "none";
     document.getElementById("detailsPage").style.display = "block";
